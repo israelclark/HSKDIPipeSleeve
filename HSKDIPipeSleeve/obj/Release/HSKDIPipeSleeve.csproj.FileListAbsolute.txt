@@ -1,0 +1,12 @@
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDIPipeSleeve.dll
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDIPipeSleeve.pdb
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\HSKDIPipeSleeve.dll
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\HSKDIPipeSleeve.pdb
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\HSKDIPipeSleeve.csprojResolveAssemblyReference.cache
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\HSKDIPipeSleeve.dll
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDIPipeSleeve.dll
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDIPipeSleeve.pdb
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDICommon.dll
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDICommon.pdb
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\HSKDIPipeSleeve.pdb

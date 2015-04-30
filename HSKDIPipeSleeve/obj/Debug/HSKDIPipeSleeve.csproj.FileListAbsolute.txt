@@ -1,0 +1,5 @@
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Debug\HSKDIPipeSleeve.dll
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Debug\HSKDIPipeSleeve.pdb
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Debug\HSKDIPipeSleeve.dll
+C:\Documents and Settings\israelc\My Documents\My Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Debug\HSKDIPipeSleeve.pdb
