@@ -107,6 +107,7 @@ namespace HSKDIProject
                     // Add each offset object
                     sleeve.Layer = "HSKDI-Pipe-Sleeve";
                     Polyline sleevePL = (Polyline)sleeve;
+                    sleevePL.ColorIndex = 256; // byLayer
                                         
                     for (int i = 0; i < sleevePL.NumberOfVertices; i++)
                     {
