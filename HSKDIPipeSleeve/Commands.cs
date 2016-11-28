@@ -24,7 +24,11 @@ namespace HSKDIProject
                 BlockTable bt = (BlockTable)tr.GetObject(db.BlockTableId, OpenMode.ForRead);
 
                 BlockTableRecord mspace = (BlockTableRecord)tr.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
-                
+
+                // Record tranformation matrix between current ucs & wcs for restoration at end of function
+                CoordinateSystem3d coordSys = ucs.CoordinateSystem3d;
+                Matrix3d mat = Matrix3d.AlignCoordinateSystem(Point3d.Origin, Vector3d.XAxis, Vector3d.YAxis, Vector3d.ZAxis, coordSys.Origin, coordSys.Xaxis, coordSys.Yaxis, coordSys.Zaxis);
+
                 // Select the pipe
                 PromptEntityOptions peo = new PromptEntityOptions("\nSelect Polyine to sleeve.");
                 peo.SetRejectMessage("You must select a single polyline.");
@@ -48,7 +52,7 @@ namespace HSKDIProject
                 if (ppr.Status != PromptStatus.OK)
                     return;
 
-                Point3d startPt = HSKDICommon.Commands.ClosestPtOnSegment(ppr.Value, pipe, ucs);//.TransformBy(ucs.Inverse());
+                Point3d startPt = HSKDICommon.Commands.ClosestPtOnSegment(ppr.Value, pipe, ucs);
                 
                 ppo.Message = "\nSelect Sleeve end point.";
                 ppo.UseBasePoint = true;
@@ -59,7 +63,7 @@ namespace HSKDIProject
                 if (ppr.Status != PromptStatus.OK)
                     return;
 
-                Point3d endPt = HSKDICommon.Commands.ClosestPtOnSegment(ppr.Value, pipe, ucs);//.TransformBy(ucs.Inverse());
+                Point3d endPt = HSKDICommon.Commands.ClosestPtOnSegment(ppr.Value, pipe, ucs);
                                
                 Polyline sleeveMidline = new Polyline();
                 double sleeveWidth = 0.02075 * HSKDICommon.Commands.getdimscale();
@@ -88,7 +92,6 @@ namespace HSKDIProject
                 sleeveMidline.SetPointAt(sleeveMidline.NumberOfVertices - 1, new Point2d(endPt.X, endPt.Y));                
                 sleeveMidline.TransformBy(ucs);
                 
-                //DoubleCollection sleeveMidlineBulges = new DoubleCollection();
                 for (int i = 0; i <= untrimmedSleeveMidline.NumberOfVertices - 1; i++)
                 {
                     double segmentBulge;
@@ -141,8 +144,10 @@ namespace HSKDIProject
                     mspace.AppendEntity(sleeve);
                     tr.AddNewlyCreatedDBObject(sleeve, true);
                 }
-                
-                ///* FOR TESTING
+
+                // restore previous UCS
+                ed.CurrentUserCoordinateSystem = mat;
+                /* FOR TESTING
                 DBPoint startPtEnt = new DBPoint(startPt);
                 startPtEnt.TransformBy(ucs);
                 startPtEnt.ColorIndex = 1;
@@ -153,7 +158,7 @@ namespace HSKDIProject
                 mspace.AppendEntity(endPtEnt);
                 tr.AddNewlyCreatedDBObject(startPtEnt, true);
                 tr.AddNewlyCreatedDBObject(endPtEnt, true);
-                //*/
+                */
 
                 tr.Commit();
             }
