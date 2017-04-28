@@ -16,7 +16,7 @@ namespace HSKDIProject
             Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             Database db = doc.Database;
             Editor ed = doc.Editor;
-            Matrix3d ucs = ed.CurrentUserCoordinateSystem;
+            
                                     
             Transaction tr = db.TransactionManager.StartTransaction();
             using (tr)
@@ -26,8 +26,8 @@ namespace HSKDIProject
                 BlockTableRecord mspace = (BlockTableRecord)tr.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
 
                 // Record tranformation matrix between current ucs & wcs for restoration at end of function
-                CoordinateSystem3d coordSys = ucs.CoordinateSystem3d;
-                Matrix3d mat = Matrix3d.AlignCoordinateSystem(Point3d.Origin, Vector3d.XAxis, Vector3d.YAxis, Vector3d.ZAxis, coordSys.Origin, coordSys.Xaxis, coordSys.Yaxis, coordSys.Zaxis);
+                Matrix3d ucs = ed.CurrentUserCoordinateSystem;                   
+                ed.WriteMessage("UCS:{0}\n", ucs);
 
                 // Select the pipe
                 PromptEntityOptions peo = new PromptEntityOptions("\nSelect Polyine to sleeve.");
@@ -146,7 +146,7 @@ namespace HSKDIProject
                 }
 
                 // restore previous UCS
-                ed.CurrentUserCoordinateSystem = mat;
+                ed.CurrentUserCoordinateSystem = ucs;
                 /* FOR TESTING
                 DBPoint startPtEnt = new DBPoint(startPt);
                 startPtEnt.TransformBy(ucs);
