@@ -42,11 +42,13 @@ namespace HSKDIProject
 
                 // Select the sleeve end points
                 Polyline pipe = (Polyline)tr.GetObject(per.ObjectId, OpenMode.ForRead);
-                
-                
-                PromptPointOptions ppo = new PromptPointOptions("\nSelect Sleeve start point.");
-                ppo.UseBasePoint = false;
-                ppo.UseDashedLine = false;                    
+
+
+                PromptPointOptions ppo = new PromptPointOptions("\nSelect Sleeve start point.")
+                {
+                    UseBasePoint = false,
+                    UseDashedLine = false
+                };
                 PromptPointResult ppr = ed.GetPoint(ppo);
 
                 if (ppr.Status != PromptStatus.OK)
@@ -66,12 +68,10 @@ namespace HSKDIProject
                 Point3d endPt = HSKDICommon.Commands.ClosestPtOnSegment(ppr.Value, pipe, ucs);
                                
                 Polyline sleeveMidline = new Polyline();
-                double sleeveWidth = 0.02075 * HSKDICommon.Commands.getdimscale();
-                double sleeveOffsetDist = 0.04 * HSKDICommon.Commands.getdimscale();
-                int startSeg;
-                int endSeg;
+                double sleeveWidth = 0.02075 * HSKDICommon.Commands.Getdimscale();
+                double sleeveOffsetDist = 0.04 * HSKDICommon.Commands.Getdimscale();
 
-                GetIntersectSegments(pipe, ucs, startPt, endPt, out startSeg, out endSeg);
+                GetIntersectSegments(pipe, ucs, startPt, endPt, out int startSeg, out int endSeg);
 
                 //build sleeve centerline
 
