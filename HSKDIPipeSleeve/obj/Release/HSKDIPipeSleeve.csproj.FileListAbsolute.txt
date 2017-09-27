@@ -8,3 +8,4 @@ C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\ob
 C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDIPipeSleeve.dll
 C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\bin\Release\HSKDIPipeSleeve.pdb
 C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\HSKDIPipeSleeve.pdb
+C:\Users\israelc\Dropbox\Programming Projects\HSKDIPipeSleeve\HSKDIPipeSleeve\obj\Release\HSKDIPipeSleeve.csproj.CoreCompileInputs.cache

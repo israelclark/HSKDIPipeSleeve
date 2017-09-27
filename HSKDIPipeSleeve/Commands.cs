@@ -15,8 +15,7 @@ namespace HSKDIProject
         {
             Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             Database db = doc.Database;
-            Editor ed = doc.Editor;
-            
+            Editor ed = doc.Editor;            
                                     
             Transaction tr = db.TransactionManager.StartTransaction();
             using (tr)
@@ -146,7 +145,7 @@ namespace HSKDIProject
                 }
 
                 // restore previous UCS
-                ed.CurrentUserCoordinateSystem = ucs;
+                //ed.CurrentUserCoordinateSystem = ucs;
                 /* FOR TESTING
                 DBPoint startPtEnt = new DBPoint(startPt);
                 startPtEnt.TransformBy(ucs);
